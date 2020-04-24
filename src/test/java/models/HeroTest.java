@@ -35,9 +35,9 @@ public class HeroTest {
         Hero hero = new Hero("Rose",18,"Fight","Sleep");
         assertEquals("Fight", hero.getPower());
     }
-//    @Test
-//    public void Hero_InstantiatesWithAge_true() throws Exception {
-//        Hero hero = setupNewHero();
-//        assertEquals(6, hero.getAge());
-//    }
+    @Test
+    public void Hero_InstantiatesWithWeakness_true() throws Exception {
+        Hero hero = new Hero("Rose",18,"Fight","Sleep");
+        assertEquals("Sleep", hero.getWeakness());
+    }
 }
