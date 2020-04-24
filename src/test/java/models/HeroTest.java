@@ -26,7 +26,7 @@ public class HeroTest {
         assertEquals("Rose", hero.getName());
     }
     @Test
-    public void Hero_InstantiatesWithPower_true() throws Exception {
+    public void Hero_InstantiatesWithAge_true() throws Exception {
         Hero hero = new Hero("Rose",18,"Fight","Sleep");
         assertEquals("18", hero.getAge());
     }
