@@ -28,6 +28,16 @@ public class HeroTest {
     @Test
     public void Hero_InstantiatesWithAge_true() throws Exception {
         Hero hero = new Hero("Rose",18,"Fight","Sleep");
-        assertEquals("18", hero.getAge());
+        assertEquals(18, hero.getAge());
     }
+    @Test
+    public void Hero_InstantiatesWithPower_true() throws Exception {
+        Hero hero = new Hero("Rose",18,"Fight","Sleep");
+        assertEquals("fight", hero.getPower());
+    }
+//    @Test
+//    public void Hero_InstantiatesWithAge_true() throws Exception {
+//        Hero hero = setupNewHero();
+//        assertEquals(6, hero.getAge());
+//    }
 }
