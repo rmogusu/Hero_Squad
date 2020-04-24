@@ -33,7 +33,7 @@ public class HeroTest {
     @Test
     public void Hero_InstantiatesWithPower_true() throws Exception {
         Hero hero = new Hero("Rose",18,"Fight","Sleep");
-        assertEquals("fight", hero.getPower());
+        assertEquals("Fight", hero.getPower());
     }
 //    @Test
 //    public void Hero_InstantiatesWithAge_true() throws Exception {
