@@ -1,0 +1,6 @@
+  .container-full {
+  background-image: url("/images/homepage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  height:650px;
