@@ -8,7 +8,7 @@
  .container{
  text-align:center;
  color: white;
- font-family: 'Rye', cursive;
+ font-family: 'Roboto', sans-serif;
  font-weight:40px;
  padding-top:100px;
  font-size:40px;
@@ -20,8 +20,8 @@
    font-size: inherit;
  }
  .nav-links  {
-   font-size: 33px;
-   font-family:'Mountains of Christmas', cursive;
+   font-size: 29px;
+   font-family:'Roboto', sans-serif;
    font-style:bold;
  }
  .nav-links {
@@ -41,6 +41,10 @@
    padding-top:10px;
    margin-top:50px;
    color: #00BFFF;
-   font-family: 'Rye', cursive;
+   font-family:'Roboto', sans-serif;
    padding-bottom:50px;
  }
+.form-group{
+margin-left:10px;
+margin-right:10px;
+}
