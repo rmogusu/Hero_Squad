@@ -21,4 +21,18 @@ public class Sql2oHeroDaoTest {
     public void tearDown() throws Exception {
         conn.close();
     }
+    @Test
+    public void addingCourseSetsId() throws Exception {
+        Hero hero = new Hero ("Rose",18,"Fight","Sleep");
+        int originalHeroId = hero.getId();
+        heroDao.add(hero);
+        assertNotEquals(originalHeroId, hero.getId());
+    }
+    @Test
+    public void existingHeroesCanBeFoundById() throws Exception {
+        Hero hero = new Hero ("Rose",18,"Fight","Sleep");
+        heroDao.add(hero);
+        Hero foundHero = heroDao.findById(hero.getId());
+        assertNotEquals(hero, foundHero);
+    }
 }
