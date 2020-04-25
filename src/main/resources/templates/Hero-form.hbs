@@ -1,0 +1,50 @@
+{{#partial "content"}}
+    <div class ="hero-card">
+        <h3><img style="height:80px;" src="images/superman.jpg">Create a Super-Hero!</h3>
+        <h4><strong>If you cage the beast, the beast will get angry!</strong></h4>
+
+         <h1>Edit this Hero!</h1>
+
+      <form action="/heroes/{{editHero.id}}" method="post">
+            <div class="form-group">
+                <fieldset>
+                    <input id="name" name="name" placeholder="Hero's  Name:" class="form-control" type="text"  required>
+                </fieldset>
+            </div>
+            <div class="form-group">
+
+                <fieldset>
+                    <input id="age" name="age"placeholder="Hero's Age:" class="form-control" type="number"required>
+                </fieldset>
+            </div>
+            <div class="form-group">
+
+                <fieldset>
+                    <select class="form-control" name="power" id="cause"   required>
+                        <option value="--select  Hero's power--">--select Hero's power--</option>
+                        <option value="mimic the powers of others">mimic the powers  of others</option>
+                        <option value="determine exactly how things work"> Determine exactly how things work</option>
+                        <option value="understand powers better">Understand powers better</option>
+                        <option value="higher up in this list">Higher up in this list</option>
+                        <option value="controls the past, present,">Controls the past and present</option>
+                        </select>
+                </fieldset>
+            </div>
+            <div class="form-group">
+
+            <fieldset>
+                <select class="form-control" name="weakness" id="cause"   required>
+                    <option value="--select  Hero's weakness--">--select Hero's weakness--</option>
+                    <option value="Falling in love">Falling in love</option>
+                    <option value="loosing hope"> loosing hope</option>
+                    <option value="Worrying too much">Worrying too much</option>
+                    <option value="Concerned of others">Concerned of others</option>
+                    <option value="Busy always">Busy always</option>
+                </select>
+            </fieldset>
+        </div>
+
+
+
+{{/partial}}
+{{> layout.hbs}}
