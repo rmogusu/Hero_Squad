@@ -14,3 +14,21 @@
  font-size:40px;
  font-style:bold;
  }
+  a {
+   color: inherit;
+   font-family: inherit;
+   font-size: inherit;
+ }
+ .nav-links  {
+   font-size: 33px;
+   font-family:'Mountains of Christmas', cursive;
+   font-style:bold;
+ }
+ .nav-links {
+   position: relative;
+   right: -60%;
+   padding-top:20px;
+   color: white;
+   word-spacing: 30px;
+
+ }
