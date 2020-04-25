@@ -1,3 +1,4 @@
+import models.Hero;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -19,5 +20,18 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "hero-form.hbs");
         }, new HandlebarsTemplateEngine());
+        //post process a form to update a task
+        post("/heroes", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            String newName = request.queryParams("name");
+            int newAge= Integer.parseInt(request.params("age"));
+            String newPower = request.queryParams("power");
+            String newWeakness = request.queryParams("weakness");
+            Hero newHero = new Hero(newName,newAge,newPower,newWeakness);
+            model.put("hero", newHero);
+            return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
+
+
