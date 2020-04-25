@@ -14,6 +14,7 @@ public class HeroTest {
 
     @After
     public void tearDown() throws Exception {
+        Hero.clearAllHeroes();
     }
     @Test
     public void NewHeroObjectGetsCorrectlyCreated_true() throws Exception {
@@ -39,5 +40,19 @@ public class HeroTest {
     public void Hero_InstantiatesWithWeakness_true() throws Exception {
         Hero hero = new Hero("Rose",18,"Fight","Sleep");
         assertEquals("Sleep", hero.getWeakness());
+    }
+    @Test
+    public void AllHeroesAreCorrectlyReturned_true() {
+        Hero hero = new Hero("Rose",18,"Fight","Sleep");
+        Hero otherHero = new Hero("Rose",18,"Fight","Sleep");
+        assertEquals(2, Hero.getAll().size());
+    }
+
+    @Test
+    public void AllHeroesContainsAllHeroes_true() {
+        Hero hero = new Hero("Rose",18,"Fight","Sleep");
+        Hero otherHero = new Hero("Rose",18,"Fight","Sleep");
+        assertTrue(Hero.getAll().contains(hero));
+        assertTrue(Hero.getAll().contains(otherHero));
     }
 }
