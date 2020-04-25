@@ -14,8 +14,7 @@ public class App {
         //get: show home page
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            ArrayList<Hero> heroes = Hero.getAll();
-            model.put("heroes",heroes);
+
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
         //get: show new Heroes form
