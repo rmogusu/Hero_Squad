@@ -1,13 +1,13 @@
 {{#partial "content"}}
 
-{{!-- {{#if heroes}} --}}
-{{!--            {{#each heroes }} --}}
-{{!--             <p>Current task:</p> --}}
-{{!--             <p>{{ name }} <a href="/heroes/{{id}}">read more...</a></p> --}}
-{{!--            {{/each}} --}}
-{{!--        {{else}} --}}
-{{!--         <p>No Hero!</p> --}}
-{{!--        {{/if}} --}}
+{{#if heroes}}
+           {{#each heroes }}
+            <p>Current task:</p>
+            <p>{{ name }} <a href="/heroes/{{id}}">read more...</a></p>
+           {{/each}}
+       {{else}}
+        <p>No Hero!</p>
+       {{/if}}
 
 <div class="container">
         <h1 id="p">SQUAD LIST!</h1>
