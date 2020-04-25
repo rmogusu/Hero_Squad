@@ -5,7 +5,7 @@
 
          <h1>Edit this Hero!</h1>
 
-      <form action="/heroes/{{editHero.id}}" method="post">
+      <form action="/heroes/new" method="post">
             <div class="form-group">
                 <fieldset>
                     <input id="name" name="name" placeholder="Hero's  Name:" class="form-control" type="text"  required>
@@ -42,6 +42,7 @@
                     <option value="Busy always">Busy always</option>
                 </select>
             </fieldset>
+            </form>
         </div>
 {{/partial}}
 {{> layout.hbs}}
