@@ -1,0 +1,16 @@
+  .container-full {
+  background-image: url("images/homepage.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  height:650px;
+  }
+ .container{
+ text-align:center;
+ color: white;
+ font-family: 'Rye', cursive;
+ font-weight:40px;
+ padding-top:100px;
+ font-size:40px;
+ font-style:bold;
+ }
