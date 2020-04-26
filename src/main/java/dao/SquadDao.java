@@ -17,10 +17,10 @@ public interface SquadDao {
     Squad findById(int id);
 
     // UPDATE
-    //void update(int id, String name,int max_size,String cause);
+    void update(int id, String name,int max_size,String cause);
 
     // DELETE
 
-    //void deleteById(int id);
-    //void clearAllSquads();
+    void deleteById(int id);
+    void clearAllSquads();
 }

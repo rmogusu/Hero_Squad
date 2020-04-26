@@ -25,20 +25,20 @@ public class SquadTest {
         Squad squad  = setupNewSquad();
         assertEquals("Super", squad.getName());
     }
-    @Test
-    public void Squad_InstantiatesWithMax_Size_true() throws Exception {
-        Squad squad  = setupNewSquad();
-        assertEquals(15, squad.getMax_size());
-    }
+
     @Test
     public void Squad_InstantiatesWithCause_true() throws Exception {
         Squad squad  = setupNewSquad();
         assertEquals("Fight sexism", squad.getCause());
     }
 
-
+    @Test
+    public void Squad_InstantiatesWithMax_Size_true() throws Exception {
+        Squad squad  = setupNewSquad();
+        assertEquals(10, squad.getMax_size());
+    }
     //helper methods
     public Squad setupNewSquad(){
-        return new Squad  ("Super","Fight sexism",15);
+        return new Squad  ("Super","Fight sexism",10);
     }
 }
