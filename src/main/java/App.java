@@ -1,4 +1,6 @@
+import dao.Sql2oHeroDao;
 import models.Hero;
+import org.sql2o.Sql2o;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
@@ -11,6 +13,17 @@ import static spark.Spark.staticFileLocation;
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
+        String connectionString = "jdbc:h2:~/superhero.db;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+        Sql2o sql2o = new Sql2o(connectionString, "rose", "wambua");
+        Sql2oHeroDao heroDao = new Sql2oHeroDao(sql2o);
+
+        //get: delete all Heroes
+        get("/heroes/delete", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            heroDao.clearAllHeroes();
+            res.redirect("/");
+            return null;
+        }, new HandlebarsTemplateEngine());
         //get: show home page
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
