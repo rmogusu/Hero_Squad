@@ -72,6 +72,19 @@ public class App {
             model.put("editHero", editHero);
             return new ModelAndView(model, "hero-form.hbs");
         }, new HandlebarsTemplateEngine());
+        //post: process a form to update a Hero
+        post("/heroes/:id", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            String newName = req.queryParams("name");
+            int newAge = Integer.parseInt(req.params("id"));
+            String newPower = req.queryParams("power");
+            String newWeakness = req.queryParams("weakness");
+            int idOfHeroToEdit = Integer.parseInt(req.params("id"));
+            heroDao.update(idOfHeroToEdit, newName,newAge,newPower,newWeakness);
+            res.redirect("/");
+            return null;
+        }, new HandlebarsTemplateEngine());
+
     }
 }
 
