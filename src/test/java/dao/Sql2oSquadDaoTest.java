@@ -1,6 +1,7 @@
 package dao;
 
 
+import models.Hero;
 import models.Squad;
 import org.junit.After;
 import org.junit.Before;
@@ -13,6 +14,7 @@ import static org.junit.Assert.*;
 public class Sql2oSquadDaoTest {
 
     private Sql2oSquadDao squadDao;
+    private Sql2oHeroDao heroDao;
     private Connection conn;
 
     @Before
@@ -20,6 +22,7 @@ public class Sql2oSquadDaoTest {
         String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
         Sql2o sql2o = new Sql2o(connectionString, "rose", "wambua");
         squadDao = new Sql2oSquadDao(sql2o);
+        heroDao = new Sql2oHeroDao(sql2o);
         conn = sql2o.open();
     }
 
@@ -85,6 +88,21 @@ public class Sql2oSquadDaoTest {
         int daoSize = squadDao.getAll().size();
         squadDao.clearAllSquads();
         assertTrue(daoSize > 0 && daoSize > squadDao.getAll().size());
+    }
+    @Test
+    public void getAllHeroesBySquadReturnsHeroesCorrectly() throws Exception {
+        Squad squad = setupNewSquad();
+        squadDao.add(squad);
+        int squadId = squad.getId();
+        Hero newHero = new Hero("Rose",12,"Fight","Sleep", squadId);
+        Hero otherHero = new Hero("Moraa",15,"Stealing","Sleep", squadId);
+        Hero thirdHero = new Hero("Mogusu",17,"Corruption","Sleep", squadId);
+        heroDao.add(newHero);
+        heroDao.add(otherHero);
+        assertNotEquals(2, squadDao.getAllHeroesBySquad(squadId));
+        assertTrue(squadDao.getAllHeroesBySquad(squadId).contains(newHero));
+        assertTrue(squadDao.getAllHeroesBySquad(squadId).contains(otherHero));
+        assertFalse(squadDao.getAllHeroesBySquad(squadId).contains(thirdHero));
     }
     public Squad setupNewSquad(){
         return new Squad  ("Super","Fight sexism",10);

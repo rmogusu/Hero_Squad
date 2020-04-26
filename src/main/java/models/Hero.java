@@ -25,6 +25,7 @@ public class Hero {
         if (!(o instanceof Hero)) return false;
         Hero hero = (Hero) o;
         return getAge() == hero.getAge() &&
+                getSquadId() == hero.getSquadId() &&
                 getId()== hero.getId() &&
                 getName().equals(hero.getName()) &&
                 getPower().equals(hero.getPower()) &&
@@ -33,7 +34,7 @@ public class Hero {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getAge(), getPower(), getWeakness(), getId());
+        return Objects.hash(getName(), getAge(), getPower(), getWeakness(), getId(),getSquadId());
     }
 
     public String getName() {
@@ -51,6 +52,11 @@ public class Hero {
     public int getId() {
         return id;
     }
+
+    public int getSquadId() {
+        return squadId;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -69,5 +75,9 @@ public class Hero {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setSquadId(int squadId) {
+        this.squadId = squadId;
     }
 }

@@ -18,7 +18,7 @@ public class Sql2oSquadDao implements SquadDao{
 
     @Override
     public void add(Squad squad) {
-        String sql = "INSERT INTO squads (name,max_size,cause) VALUES ('Super',10,'Fight sexism')";
+        String sql = "INSERT INTO squads (name,max_size,cause) VALUES (:name,:max_size,:cause)";
         try (Connection con = sql2o.open()) {
             int id = (int) con.createQuery(sql, true)
                     .bind(squad)
@@ -81,6 +81,14 @@ public class Sql2oSquadDao implements SquadDao{
                     .executeUpdate();
         } catch (Sql2oException ex) {
             System.out.println(ex);
+        }
+    }
+    @Override
+    public List<Hero> getAllHeroesBySquad(int squadId) {
+        try(Connection con = sql2o.open()){
+            return con.createQuery("SELECT * FROM heroes WHERE squadId = :squadId")
+                    .addParameter("squadId", squadId)
+                    .executeAndFetch(Hero.class);
         }
     }
 }

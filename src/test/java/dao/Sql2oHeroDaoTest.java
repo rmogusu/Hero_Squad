@@ -1,7 +1,6 @@
 package dao;
 
 import models.Hero;
-import models.Squad;
 import org.sql2o.*;
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -34,7 +33,7 @@ public class Sql2oHeroDaoTest {
         Hero hero = setupNewHero();
         heroDao.add(hero);
         Hero foundHero = heroDao.findById(hero.getId());
-        assertNotEquals(hero, foundHero);
+        assertEquals(hero, foundHero);
     }
 
     @Test
@@ -54,10 +53,10 @@ public class Sql2oHeroDaoTest {
         int initialAge = 18;
         String initialPower = "Fight";
         String initialWeakness = "Sleep";
-        Hero hero = new Hero (initialName,initialAge,initialPower,initialWeakness);
+        Hero hero = new Hero (initialName,initialAge,initialPower,initialWeakness,1);
         heroDao.add(hero);
 
-        heroDao.update(hero.getId(),"Maria",16,"Courage","Fall in love");
+        heroDao.update(hero.getId(),"Maria",16,"Courage","Fall in love",1);
         Hero updatedHero = heroDao.findById(hero.getId());
         assertNotEquals(initialName, updatedHero.getName());
         assertNotEquals(initialAge, updatedHero.getAge());
@@ -76,7 +75,7 @@ public class Sql2oHeroDaoTest {
     @Test
     public void clearAllClearsAll() throws Exception {
         Hero hero =setupNewHero();
-        Hero otherHero = new Hero("Faith",16,"Courage","Fall in love");
+        Hero otherHero = new Hero("Faith",16,"Courage","Fall in love",1);
         heroDao.add(hero);
         heroDao.add(otherHero);
         int daoSize = heroDao.getAll().size();
@@ -84,6 +83,6 @@ public class Sql2oHeroDaoTest {
         assertTrue(daoSize > 0 && daoSize > heroDao.getAll().size());
     }
     public Hero setupNewHero(){
-        return new Hero ("Rose",18,"Fight","Sleep");
+        return new Hero ("Rose",18,"Fight","Sleep",1);
     }
 }

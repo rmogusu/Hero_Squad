@@ -5,7 +5,8 @@ CREATE TABLE IF NOT EXISTS heroes (
   name VARCHAR,
   age INT,
   power VARCHAR,
-  weakness VARCHAR
+  weakness VARCHAR,
+  squadId INT
 );
 CREATE TABLE IF NOT EXISTS squads(
   id int PRIMARY KEY auto_increment,

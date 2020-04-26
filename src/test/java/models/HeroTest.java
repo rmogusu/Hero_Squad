@@ -44,6 +44,6 @@ public class HeroTest {
 
     //helper methods
     public Hero setupNewHero(){
-        return new Hero ("Rose",18,"Fight","Sleep");
+        return new Hero ("Rose",18,"Fight","Sleep",1);
     }
 }

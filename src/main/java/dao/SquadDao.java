@@ -18,7 +18,7 @@ public interface SquadDao {
 
     // UPDATE
     void update(int id, String name,int max_size,String cause);
-
+    List<Hero> getAllHeroesBySquad(int squadId);
     // DELETE
 
     void deleteById(int id);
