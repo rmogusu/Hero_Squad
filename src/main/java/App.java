@@ -24,6 +24,14 @@ public class App {
             res.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());
+        //get: delete an individual Hero
+        get("/heroes/:id/delete", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfHeroToDelete = Integer.parseInt(req.params("id"));
+            heroDao.deleteById(idOfHeroToDelete);
+            res.redirect("/");
+            return null;
+        }, new HandlebarsTemplateEngine());
         //get: show home page
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
