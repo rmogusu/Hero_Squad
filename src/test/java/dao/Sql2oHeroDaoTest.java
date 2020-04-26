@@ -35,4 +35,15 @@ public class Sql2oHeroDaoTest {
         Hero foundHero = heroDao.findById(hero.getId());
         assertNotEquals(hero, foundHero);
     }
+    @Test
+    public void addedHeroesAreReturnedFromGetAll() throws Exception {
+        Hero hero = new Hero ("Rose",18,"Fight","Sleep");
+        heroDao.add(hero);
+        assertEquals(1, heroDao.getAll().size());
+    }
+
+    @Test
+    public void noHeroesReturnsEmptyList() throws Exception {
+        assertEquals(0, heroDao.getAll().size());
+    }
 }
