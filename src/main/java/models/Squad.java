@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public class Squad {
     private String name;
     private String cause;
@@ -11,6 +13,22 @@ public class Squad {
         this.max_size=max_size;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Squad)) return false;
+        Squad squad = (Squad) o;
+        return getMax_size() == squad.getMax_size() &&
+                getId()== squad.getId() &&
+                getName().equals(squad.getName()) &&
+                getCause().equals(squad.getCause()) ;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getMax_size(), getCause(),  getId());
+    }
     public String getName() {
         return name;
     }
