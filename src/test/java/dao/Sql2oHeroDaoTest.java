@@ -46,4 +46,39 @@ public class Sql2oHeroDaoTest {
     public void noHeroesReturnsEmptyList() throws Exception {
         assertEquals(0, heroDao.getAll().size());
     }
+    @Test
+    public void updateChangesHeroContent() throws Exception {
+        String initialName = "Rose";
+        int initialAge = 18;
+        String initialPower = "Fight";
+        String initialWeakness = "Sleep";
+        Hero hero = new Hero (initialName,initialAge,initialPower,initialWeakness);
+        heroDao.add(hero);
+
+        heroDao.update(hero.getId(),"Faith",16,"Courage","Fall in love");
+        Hero updatedHero = heroDao.findById(hero.getId());
+        assertNotEquals(initialName, updatedHero.getName());
+        assertNotEquals(initialAge, updatedHero.getAge());
+        assertNotEquals(initialPower, updatedHero.getPower());
+        assertNotEquals(initialWeakness, updatedHero.getWeakness());
+    }
+
+    @Test
+    public void deleteByIdDeletesCorrectHero() throws Exception {
+        Hero hero = new Hero ("Rose",18,"Fight","Sleep");
+        heroDao.add(hero);
+        heroDao.deleteById(hero.getId());
+        assertEquals(0, heroDao.getAll().size());
+    }
+
+    @Test
+    public void clearAllClearsAll() throws Exception {
+        Hero hero = new Hero ("Rose",18,"Fight","Sleep");
+        Hero otherHero = new Hero("Faith",16,"Courage","Fall in love");
+        heroDao.add(hero);
+        heroDao.add(otherHero);
+        int daoSize = heroDao.getAll().size();
+        heroDao.clearAllHeroes();
+        assertTrue(daoSize > 0 && daoSize > heroDao.getAll().size());
+    }
 }
