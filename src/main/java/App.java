@@ -6,6 +6,7 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import static spark.Spark.*;
 import static spark.Spark.staticFileLocation;
@@ -32,27 +33,36 @@ public class App {
             res.redirect("/");
             return null;
         }, new HandlebarsTemplateEngine());
-        //get: show home page
-        get("/", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
-
+        //get: show all Heroes
+        get("/", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Hero> heroes = heroDao.getAll();
+            model.put("heroes", heroes);
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
-        //get: show new Heroes form
+        //get: show new hero form
         get("/heroes/new", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "hero-form.hbs");
         }, new HandlebarsTemplateEngine());
-        //post process a form to update a task
-        post("/heroes", (request, response) -> {
+        //post: process new hero form
+        post("/tasks", (req, res) -> { //URL to make new task on POST route
             Map<String, Object> model = new HashMap<>();
-            String newName = request.queryParams("name");
-            int newAge= Integer.parseInt(request.params("age"));
-            String newPower = request.queryParams("power");
-            String newWeakness = request.queryParams("weakness");
-            Hero heroes = new Hero(newName,newAge,newPower,newWeakness);
-            model.put("hero", heroes);
+            String name = req.queryParams("name");
+            int age = Integer.parseInt(req.params("age"));
+            String power = req.queryParams("power");
+            String weakness = req.queryParams("weakness");
+            Hero newHero = new Hero(name,age,power,weakness);
+            heroDao.add(newHero);
             return new ModelAndView(model, "success.hbs");
+        }, new HandlebarsTemplateEngine());
+         //get: show an individual hero
+        get("/heroes/:id", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfHeroToFind = Integer.parseInt(req.params("id"));
+            Hero foundHero= heroDao.findById(idOfHeroToFind);
+            model.put("heroes", foundHero);
+            return new ModelAndView(model, "hero-detail.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }
