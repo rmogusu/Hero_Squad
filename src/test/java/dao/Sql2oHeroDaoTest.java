@@ -55,9 +55,9 @@ public class Sql2oHeroDaoTest {
         Hero hero = new Hero (initialName,initialAge,initialPower,initialWeakness);
         heroDao.add(hero);
 
-        heroDao.update(hero.getId(),"Faith",16,"Courage","Fall in love");
+        heroDao.update(hero.getId(),"Rose",16,"Courage","Fall in love");
         Hero updatedHero = heroDao.findById(hero.getId());
-        assertNotEquals(initialName, updatedHero.getName());
+        assertEquals(initialName, updatedHero.getName());
         assertNotEquals(initialAge, updatedHero.getAge());
         assertNotEquals(initialPower, updatedHero.getPower());
         assertNotEquals(initialWeakness, updatedHero.getWeakness());
