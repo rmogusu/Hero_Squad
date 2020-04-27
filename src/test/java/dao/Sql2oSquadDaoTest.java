@@ -99,7 +99,7 @@ public class Sql2oSquadDaoTest {
         Hero thirdHero = new Hero("Mogusu",17,"Corruption","Sleep", squadId);
         heroDao.add(newHero);
         heroDao.add(otherHero);
-        assertNotEquals(2, squadDao.getAllHeroesBySquad(squadId));
+        assertEquals(2, squadDao.getAllHeroesBySquad(squadId).size());
         assertTrue(squadDao.getAllHeroesBySquad(squadId).contains(newHero));
         assertTrue(squadDao.getAllHeroesBySquad(squadId).contains(otherHero));
         assertFalse(squadDao.getAllHeroesBySquad(squadId).contains(thirdHero));

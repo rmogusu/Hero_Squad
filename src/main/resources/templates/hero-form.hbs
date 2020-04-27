@@ -1,23 +1,41 @@
 {{#partial "content"}}
+
     <div class ="hero-card">
-        <h2><strong>If you cage the beast, the beast will get angry!</strong></h2>
-         <h1>Create a Super-Hero!</h1>
+        {{#if editHero}}
+            <form action="/heroes/{{hero.id}}" method="post">
+                <br>
+                <label for="name">Edit this Hero</label>
+                <input id="name" name="name" type="text" value="{{hero.name}}">
+                <br>
+                <label for="squadId">Update this Hero's Squad:</label>
+                <select id="squadId" name="squadId">
+                    {{#each squads}}
+                        <option value="{{id}}">{{name}}</option>
+                    {{/each}}
+                </select>
+                <p>Don't see the right Squad?<a href="/squad/new">Add a new one first.</a></p>
+                <button type="submit" class="btn btn-default">Submit!</button>
+            </form>
+    {{else}}
+            <h3><strong>If you cage the beast, the beast will get angry!</strong></h3>
+            <h2>Create a Super-Hero!</h2>
+
       <form action="/heroes" method="post">
+        {{#if squads}}
             <div class="form-group">
                 <fieldset>
                     <input id="name" name="name" placeholder="Hero's  Name:" class="form-control" type="text"  required>
                 </fieldset>
             </div>
             <div class="form-group">
-
                 <fieldset>
-                    <input id="age" name="age" max="10"min="1"placeholder="Hero's Age:" class="form-control" type="number" required>
+                    <input id="age" name="age" min="1"placeholder="Hero's Age:" class="form-control" type="number" required>
                 </fieldset>
             </div>
             <div class="form-group">
 
                 <fieldset>
-                    <select class="form-control" name="power" id="cause"   required>
+                    <select class="form-control" name="power" id="power"  type="text" required>
                         <option value="--select  Hero's power--">--select Hero's power--</option>
                         <option value="mimic the powers of others">mimic the powers  of others</option>
                         <option value="determine exactly how things work"> Determine exactly how things work</option>
@@ -30,7 +48,7 @@
             <div class="form-group">
 
             <fieldset>
-                <select class="form-control" name="weakness" id="cause"   required>
+                <select class="form-control" name="weakness" id="weakness"  type="text" required>
                     <option value="--select  Hero's weakness--">--select Hero's weakness--</option>
                     <option value="Falling in love">Falling in love</option>
                     <option value="loosing hope"> loosing hope</option>
@@ -40,12 +58,25 @@
                 </select>
             </fieldset>
             </div>
+            <label for="squadId">Categorize this Hero  with Squad:</label>
+            <select id="squadId" name="squadId">
+                {{#each squads}}
+                    <option value="{{id}}">{{name}}</option>
+                {{/each}}
+            </select>
+            <p>Don't see the right squad?<a href="/squad/new">Add a new one first.</a></p>
+        {{else}}
+            <h3> You'll need to add a Squad  before you add a Hero.<br>
+                <a href="/squad/new">Add one here.</a> </h3>
+        {{/if}}
              <div class="form-group">
             <fieldset>
             <button type="submit" class="btn btn-default">Create!</button>
             </fieldset>
             </div>
             </form>
-        </div>
+    {{/if}}
+    </div>
+
 {{/partial}}
 {{> layout.hbs}}
