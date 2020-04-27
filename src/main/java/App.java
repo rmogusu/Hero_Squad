@@ -29,14 +29,14 @@ public class App {
             model.put("heroes", heroes);
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
-//
-//        //show new squad form
-//        get("/squad/new", (req, res) -> {
-//            Map<String, Object> model = new HashMap<>();
-//            List<Squad> squads = squadDao.getAll();
-//            model.put("squads", squads);
-//            return new ModelAndView(model, "squad-form.hbs"); //new
-//        }, new HandlebarsTemplateEngine());
+
+        //show new squad form
+        get("/squad/new", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<Squad> squads = squadDao.getAll();
+            model.put("squads", squads);
+            return new ModelAndView(model, "squad-form.hbs"); //new
+        }, new HandlebarsTemplateEngine());
 
         //post: process new squad form
         post("/squads", (req, res) -> { //new
