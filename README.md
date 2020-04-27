@@ -11,6 +11,8 @@ Rose Mogusu.
 * JRE.
 * IntelliJ.
 * Jenkins.
+* HEROKU CLI.
+* MAVEN.
 
 ## Setup
 Run https://github.com/rmogusu/Hero_Squad.git

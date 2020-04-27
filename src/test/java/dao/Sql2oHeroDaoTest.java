@@ -6,21 +6,30 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class Sql2oHeroDaoTest {
-    private Sql2oHeroDao heroDao;
-    private Connection conn;
+    private static Sql2oHeroDao heroDao;
+    private static Connection conn;
 
-    @Before
-    public void setUp() throws Exception {
-        String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+    @BeforeClass
+    public static void setUp() throws Exception {
+        String connectionString = "jdbc:postgresql://localhost:5432/superhero_test";
         Sql2o sql2o = new Sql2o(connectionString, "rose", "wambua");
         heroDao = new Sql2oHeroDao(sql2o);
         conn = sql2o.open();
     }
 
+
     @After
     public void tearDown() throws Exception {
-        conn.close();
+        System.out.println("clearing database");
+        heroDao.clearAllHeroes();
     }
+
+    @AfterClass
+    public static void shutDown() throws Exception {
+        conn.close();
+        System.out.println("connection closed");
+    }
+
     @Test
     public void addingCourseSetsId() throws Exception {
          Hero hero = setupNewHero();
