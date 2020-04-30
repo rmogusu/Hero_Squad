@@ -13,10 +13,21 @@ import static spark.Spark.*;
 import static spark.Spark.staticFileLocation;
 
 public class App {
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
     public static void main(String[] args) {
+
+        port(getHerokuAssignedPort());
         staticFileLocation("/public");
-        String connectionString = "jdbc:postgresql://localhost:5432/superhero";
-        Sql2o sql2o = new Sql2o(connectionString, "rose", "wambua");
+        String connectionString = "jdbc:postgresql://ec2-34-233-186-251.compute-1.amazonaws.com:5432/d9odu9hmgel35e"; //!
+        Sql2o sql2o = new Sql2o(connectionString, "iwlltlzqhvfffy", "d86830a444dc458bc0389a0003ab8a24f30cd2cc653e4ed13e07f84704f942b0"); //!
+        //String connectionString = "jdbc:postgresql://localhost:5432/superhero";
+        //Sql2o sql2o = new Sql2o(connectionString, "rose", "wambua");
         Sql2oHeroDao heroDao = new Sql2oHeroDao(sql2o);
         Sql2oSquadDao squadDao = new Sql2oSquadDao(sql2o);
 
