@@ -4,6 +4,7 @@ import models.Hero;
 import models.Squad;
 import org.sql2o.Sql2o;
 import spark.ModelAndView;
+
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
 import java.util.HashMap;
