@@ -1,14 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: dao.Sql2oSquadDaoTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 1.244 sec <<< FAILURE! - in dao.Sql2oSquadDaoTest
-dao.Sql2oSquadDaoTest  Time elapsed: 1.243 sec  <<< ERROR!
-org.sql2o.Sql2oException: Could not acquire a connection from DataSource - FATAL: no pg_hba.conf entry for host "154.122.199.97", user "iwlltlzqhvfffy", database "d9odu9hmgel35e", SSL off
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.904 sec <<< FAILURE! - in dao.Sql2oSquadDaoTest
+dao.Sql2oSquadDaoTest  Time elapsed: 0.903 sec  <<< ERROR!
+org.sql2o.Sql2oException: Could not acquire a connection from DataSource - FATAL: no pg_hba.conf entry for host "154.123.157.232", user "iwlltlzqhvfffy", database "d9odu9hmgel35e", SSL off
 	at dao.Sql2oSquadDaoTest.setUp(Sql2oSquadDaoTest.java:26)
-Caused by: org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "154.122.199.97", user "iwlltlzqhvfffy", database "d9odu9hmgel35e", SSL off
+Caused by: org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "154.123.157.232", user "iwlltlzqhvfffy", database "d9odu9hmgel35e", SSL off
 	at dao.Sql2oSquadDaoTest.setUp(Sql2oSquadDaoTest.java:26)
 
-dao.Sql2oSquadDaoTest  Time elapsed: 1.244 sec  <<< ERROR!
+dao.Sql2oSquadDaoTest  Time elapsed: 0.904 sec  <<< ERROR!
 java.lang.NullPointerException
 	at dao.Sql2oSquadDaoTest.shutDown(Sql2oSquadDaoTest.java:39)
 

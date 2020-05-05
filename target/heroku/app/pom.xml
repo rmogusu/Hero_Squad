@@ -97,8 +97,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
 
@@ -137,8 +137,8 @@
                     <appName>rose-superhero</appName>
                     <processTypes>
 <!--                        <web>Java $Java_OPTS -jar target/dependency/webapp-runner.jar –port $PORT target/*.war</web>-->
-<!--                        <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>-->
-                      <web>java -jar target/my-app-1.0-jar-with-dependencies.jar</web>
+                        <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
+<!--                      <web>java -jar target/my-app-1.0-jar-with-dependencies.jar</web>-->
                     </processTypes>
                 </configuration>
             </plugin>

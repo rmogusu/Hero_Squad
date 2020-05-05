@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="dao.Sql2oSquadDaoTest" time="1.244" tests="2" errors="2" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="dao.Sql2oSquadDaoTest" time="0.904" tests="2" errors="2" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.5+10"/>
@@ -61,14 +61,14 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="dao.Sql2oSquadDaoTest" classname="dao.Sql2oSquadDaoTest" time="1.243">
-    <error message="Could not acquire a connection from DataSource - FATAL: no pg_hba.conf entry for host &quot;154.122.199.97&quot;, user &quot;iwlltlzqhvfffy&quot;, database &quot;d9odu9hmgel35e&quot;, SSL off" type="org.sql2o.Sql2oException">org.sql2o.Sql2oException: Could not acquire a connection from DataSource - FATAL: no pg_hba.conf entry for host "154.122.199.97", user "iwlltlzqhvfffy", database "d9odu9hmgel35e", SSL off
+  <testcase name="dao.Sql2oSquadDaoTest" classname="dao.Sql2oSquadDaoTest" time="0.903">
+    <error message="Could not acquire a connection from DataSource - FATAL: no pg_hba.conf entry for host &quot;154.123.157.232&quot;, user &quot;iwlltlzqhvfffy&quot;, database &quot;d9odu9hmgel35e&quot;, SSL off" type="org.sql2o.Sql2oException">org.sql2o.Sql2oException: Could not acquire a connection from DataSource - FATAL: no pg_hba.conf entry for host "154.123.157.232", user "iwlltlzqhvfffy", database "d9odu9hmgel35e", SSL off
 	at dao.Sql2oSquadDaoTest.setUp(Sql2oSquadDaoTest.java:26)
-Caused by: org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "154.122.199.97", user "iwlltlzqhvfffy", database "d9odu9hmgel35e", SSL off
+Caused by: org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "154.123.157.232", user "iwlltlzqhvfffy", database "d9odu9hmgel35e", SSL off
 	at dao.Sql2oSquadDaoTest.setUp(Sql2oSquadDaoTest.java:26)
 </error>
   </testcase>
-  <testcase name="dao.Sql2oSquadDaoTest" classname="dao.Sql2oSquadDaoTest" time="1.244">
+  <testcase name="dao.Sql2oSquadDaoTest" classname="dao.Sql2oSquadDaoTest" time="0.904">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at dao.Sql2oSquadDaoTest.shutDown(Sql2oSquadDaoTest.java:39)
 </error>

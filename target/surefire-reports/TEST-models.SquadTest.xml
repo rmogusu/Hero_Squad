@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="models.SquadTest" time="0.009" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="models.SquadTest" time="0.005" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.5+10"/>
@@ -61,8 +61,8 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="Squad_InstantiatesWithCause_true" classname="models.SquadTest" time="0.001"/>
-  <testcase name="NewSquadObjectGetsCorrectlyCreated_true" classname="models.SquadTest" time="0.003"/>
-  <testcase name="Squad_InstantiatesWithName_true" classname="models.SquadTest" time="0.001"/>
-  <testcase name="Squad_InstantiatesWithMax_Size_true" classname="models.SquadTest" time="0.001"/>
+  <testcase name="Squad_InstantiatesWithCause_true" classname="models.SquadTest" time="0.004"/>
+  <testcase name="NewSquadObjectGetsCorrectlyCreated_true" classname="models.SquadTest" time="0"/>
+  <testcase name="Squad_InstantiatesWithName_true" classname="models.SquadTest" time="0"/>
+  <testcase name="Squad_InstantiatesWithMax_Size_true" classname="models.SquadTest" time="0"/>
 </testsuite>
