@@ -1,0 +1,37 @@
+{{#partial "content"}}
+
+    <div class ="cards">
+        <p>Here are all the Heroes listed in {{squad.name}} squad:</p>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th scope="col"> Name:</th>
+                <th scope="col"> Age:</th>
+                <th scope="col"> Power:</th>
+                <th scope="col"> weakness:</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            {{#if heroes}}
+                {{#each heroes}}
+                        <td>{{ name }}</td>
+                        <td>{{ age }}</td>
+                        <td>{{ power}}</td>
+                        <td>{{ weakness}}</td>
+
+                    </tr>
+                {{/each}}
+            {{else}}
+                <p>No Heroes Recorded yet !</p>
+            {{/if}}
+            </tbody>
+
+        </table>
+        <a href="/squads/{{squad.id}}/edit"><button style="font-weight:10px;" name="submit" type="submit" id="sub" >Edit this squad</button></a>
+        <a href="/squad/list"><button style="font-weight:10px;" name="submit" type="submit" id="sub" >Back!</button></a>
+    </div>
+
+{{/partial}}
+
+{{> layout.hbs}}
