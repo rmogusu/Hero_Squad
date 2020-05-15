@@ -2,6 +2,7 @@ import dao.Sql2oHeroDao;
 import dao.Sql2oSquadDao;
 import models.Hero;
 import models.Squad;
+import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import spark.ModelAndView;
 
@@ -25,14 +26,17 @@ public class App {
 
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
+        Sql2oSquadDao squadDao;
+        Sql2oHeroDao heroDao;
+        Connection conn;
         String connectionString = "jdbc:postgresql://ec2-52-44-166-58.compute-1.amazonaws.com:5432/d7bdtl932rqs4j";
         Sql2o sql2o = new Sql2o(connectionString,"stztbzqpnagyxc", "0937eb339a73bf490858fb56f9da339eef8491395d2101903f00675949ddb3c1");
 
         //String connectionString = "jdbc:postgresql://localhost:5432/superhero";
         //Sql2o sql2o = new Sql2o(connectionString, "rose", "wambua");
-        Sql2oHeroDao heroDao = new Sql2oHeroDao(sql2o);
-        Sql2oSquadDao squadDao = new Sql2oSquadDao(sql2o);
-
+         heroDao = new Sql2oHeroDao(sql2o);
+         squadDao = new Sql2oSquadDao(sql2o);
+         conn=sql2o.open();
         //get: show all Heroes in all squads and show all squads
         get("/", (req, res) -> {
             Map<String, Object> model = new HashMap<>();

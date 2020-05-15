@@ -1,0 +1,36 @@
+{{#partial "content"}}
+<div class ="cards">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col"> Name:</th>
+                    <th scope="col"> Age:</th>
+                    <th scope="col"> Power:</th>
+                    <th scope="col"> weakness:</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                {{#if heroes}}
+                    {{#each heroes}}
+                            <td>{{ name }}</td>
+                            <td>{{ age }}</td>
+                            <td>{{ power}}</td>
+                            <td>{{ weakness}}</td>
+
+                        </tr>
+                    {{/each}}
+                {{else}}
+                    <p>No Heroes Recorded yet !</p>
+                {{/if}}
+                <p>current Heroes :</p>
+                </tbody>
+            </table>
+
+    <a href="/heroes/delete"><button style="font-weight:10px;" name="submit" type="submit" id="sub" >DELETE All Heroes</button></a>
+    <a href="/"><button style="font-weight:10px;" name="submit" type="submit" id="sub" >Back!</button></a>
+
+</div>
+{{/partial}}
+
+{{> layout.hbs}}

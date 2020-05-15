@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+       <meta charset="UTF-8">
+       <meta name="viewport"
+             content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+       <title>{{#block "title"}} Hero_Squad {{/block}}</title>
+       <link rel="stylesheet" href="/app.css">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Emilys+Candy|Mountains+of+Christmas|Rye&display=swap" rel="stylesheet">
+       <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  </head>
+  <body>
+  <!--begin main template-->
+    <div class="container-full">
+    <nav class="navbar">
+
+        <ul class="nav nav-tabs">
+            <li role="presentation" ><a href="/">Home</a></li>
+            <li role="presentation"><a href="/heroes/new">CreateNewHero</a></li>
+
+            <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    SquadList <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    {{#if squads}}
+                        {{#each squads}}
+                            <li><a href="/squads/{{id}}">{{name}}</a></li>
+                        {{/each}}
+                        <li><a href="/squad/new">CreateNewSquad</a></li>
+
+                    {{else}}
+                        <li><a href="/squad/new">CreateNewSquad</a></li>
+                    {{/if}}
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+      {{#block "content" }}
+{{/block }}
+  </div>
+
+    <!--end main template-->
+{{#block "footer" }}
+    <footer class="footer">
+
+     </footer>
+
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </html>
+{{/block }}
