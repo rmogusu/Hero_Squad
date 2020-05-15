@@ -1,14 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: dao.Sql2oHeroDaoTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.527 sec <<< FAILURE! - in dao.Sql2oHeroDaoTest
-dao.Sql2oHeroDaoTest  Time elapsed: 0.526 sec  <<< ERROR!
-org.sql2o.Sql2oException: Could not acquire a connection from DataSource - FATAL: no pg_hba.conf entry for host "197.156.190.227", user "iwlltlzqhvfffy", database "d9odu9hmgel35e", SSL off
-	at dao.Sql2oHeroDaoTest.setUp(Sql2oHeroDaoTest.java:19)
-Caused by: org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "197.156.190.227", user "iwlltlzqhvfffy", database "d9odu9hmgel35e", SSL off
-	at dao.Sql2oHeroDaoTest.setUp(Sql2oHeroDaoTest.java:19)
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.024 sec <<< FAILURE! - in dao.Sql2oHeroDaoTest
+dao.Sql2oHeroDaoTest  Time elapsed: 0.024 sec  <<< ERROR!
+org.sql2o.Sql2oException: Could not acquire a connection from DataSource - FATAL: no pg_hba.conf entry for host "154.122.162.153", user "wwsjnsopdbenwg", database "d4surr9mntsa7l", SSL off
+	at dao.Sql2oHeroDaoTest.setUp(Sql2oHeroDaoTest.java:23)
+Caused by: org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "154.122.162.153", user "wwsjnsopdbenwg", database "d4surr9mntsa7l", SSL off
+	at dao.Sql2oHeroDaoTest.setUp(Sql2oHeroDaoTest.java:23)
 
-dao.Sql2oHeroDaoTest  Time elapsed: 0.527 sec  <<< ERROR!
+dao.Sql2oHeroDaoTest  Time elapsed: 0.024 sec  <<< ERROR!
 java.lang.NullPointerException
-	at dao.Sql2oHeroDaoTest.shutDown(Sql2oHeroDaoTest.java:31)
+	at dao.Sql2oHeroDaoTest.shutDown(Sql2oHeroDaoTest.java:35)
 

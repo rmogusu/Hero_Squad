@@ -20,8 +20,8 @@ public class Sql2oSquadDaoTest {
 
     @BeforeClass
     public static void setUp() throws Exception {
-        String connectionString = "jdbc:postgresql://ec2-52-44-166-58.compute-1.amazonaws.com:5432/d7bdtl932rqs4j";
-        Sql2o sql2o = new Sql2o(connectionString,"stztbzqpnagyxc", "0937eb339a73bf490858fb56f9da339eef8491395d2101903f00675949ddb3c1");
+        String connectionString = "jdbc:postgresql://ec2-18-206-84-251.compute-1.amazonaws.com:5432/d4surr9mntsa7l"; //!
+        Sql2o sql2o = new Sql2o(connectionString, "wwsjnsopdbenwg", "162a7975f717db0e056753bdb08d9bc69cc3ebeb0d0d0eceadf0f3f6804bcde2"); //!
         //String connectionString = "jdbc:postgresql://localhost:5432/superhero_test";
         //Sql2o sql2o = new Sql2o(connectionString, "rose", "wambua");
         System.out.println("Connection Initialized");
@@ -75,7 +75,6 @@ public class Sql2oSquadDaoTest {
         int initialMax_size = 10;
         Squad squad  = new Squad (initialName,initialCause,initialMax_size);
         squadDao.add(squad);
-
         squadDao.update(squad.getId(),"Millennium",16,"Fight corruption");
         Squad updatedSquad = squadDao.findById(squad.getId());
         assertNotEquals(initialName, updatedSquad.getName());
