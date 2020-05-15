@@ -5,15 +5,18 @@ import models.Hero;
 import models.Squad;
 import org.junit.*;
 import org.sql2o.Connection;
-import org.sql2o.Sql2o;
+import org.sql2o.*;
 
 import static org.junit.Assert.*;
 
-public class Sql2oSquadDaoTest {
 
+
+
+public class Sql2oSquadDaoTest {
+    private static Connection conn;
     private static Sql2oSquadDao squadDao;
     private static Sql2oHeroDao heroDao;
-    private static Connection conn;
+
 
     @BeforeClass
     public static void setUp() throws Exception {
@@ -21,6 +24,7 @@ public class Sql2oSquadDaoTest {
         Sql2o sql2o = new Sql2o(connectionString,"stztbzqpnagyxc", "0937eb339a73bf490858fb56f9da339eef8491395d2101903f00675949ddb3c1");
         //String connectionString = "jdbc:postgresql://localhost:5432/superhero_test";
         //Sql2o sql2o = new Sql2o(connectionString, "rose", "wambua");
+        System.out.println("Connection Initialized");
         squadDao = new Sql2oSquadDao(sql2o);
         heroDao = new Sql2oHeroDao(sql2o);
         conn = sql2o.open();

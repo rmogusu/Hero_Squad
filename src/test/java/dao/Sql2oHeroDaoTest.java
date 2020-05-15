@@ -1,13 +1,16 @@
 package dao;
 
 import models.Hero;
-import org.sql2o.*;
 import org.junit.*;
+import org.sql2o.Connection;
+import org.sql2o.*;
+
 import static org.junit.Assert.*;
 
 public class Sql2oHeroDaoTest {
-    private static Sql2oHeroDao heroDao;
     private static Connection conn;
+    private static Sql2oHeroDao heroDao;
+
 
     @BeforeClass
     public static void setUp() throws Exception {
@@ -15,6 +18,7 @@ public class Sql2oHeroDaoTest {
         Sql2o sql2o = new Sql2o(connectionString, "iwlltlzqhvfffy", "d86830a444dc458bc0389a0003ab8a24f30cd2cc653e4ed13e07f84704f942b0"); //!
         //String connectionString = "jdbc:postgresql://localhost:5432/superhero_test";
         //Sql2o sql2o = new Sql2o(connectionString, "rose", "wambua");
+        System.out.println("Connection Initialized");
         heroDao = new Sql2oHeroDao(sql2o);
         conn = sql2o.open();
     }

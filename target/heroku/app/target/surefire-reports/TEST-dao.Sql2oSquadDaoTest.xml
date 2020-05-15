@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="dao.Sql2oSquadDaoTest" time="1.05" tests="2" errors="2" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="dao.Sql2oSquadDaoTest" time="0.942" tests="2" errors="2" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.5+10"/>
@@ -61,18 +61,18 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="dao.Sql2oSquadDaoTest" classname="dao.Sql2oSquadDaoTest" time="1.049">
-    <error message="Could not acquire a connection from DataSource - FATAL: no pg_hba.conf entry for host &quot;197.156.190.136&quot;, user &quot;stztbzqpnagyxc&quot;, database &quot;d7bdtl932rqs4j&quot;, SSL off" type="org.sql2o.Sql2oException">org.sql2o.Sql2oException: Could not acquire a connection from DataSource - FATAL: no pg_hba.conf entry for host "197.156.190.136", user "stztbzqpnagyxc", database "d7bdtl932rqs4j", SSL off
+  <testcase name="dao.Sql2oSquadDaoTest" classname="dao.Sql2oSquadDaoTest" time="0.939">
+    <error message="Could not acquire a connection from DataSource - FATAL: no pg_hba.conf entry for host &quot;197.156.190.133&quot;, user &quot;stztbzqpnagyxc&quot;, database &quot;d7bdtl932rqs4j&quot;, SSL off" type="org.sql2o.Sql2oException">org.sql2o.Sql2oException: Could not acquire a connection from DataSource - FATAL: no pg_hba.conf entry for host "197.156.190.133", user "stztbzqpnagyxc", database "d7bdtl932rqs4j", SSL off
 	at dao.Sql2oSquadDaoTest.setUp(Sql2oSquadDaoTest.java:26)
-Caused by: org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "197.156.190.136", user "stztbzqpnagyxc", database "d7bdtl932rqs4j", SSL off
+Caused by: org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "197.156.190.133", user "stztbzqpnagyxc", database "d7bdtl932rqs4j", SSL off
 	at dao.Sql2oSquadDaoTest.setUp(Sql2oSquadDaoTest.java:26)
 </error>
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-May 15, 2020 4:52:55 PM org.postgresql.core.v3.ConnectionFactoryImpl log
+May 15, 2020 5:23:32 PM org.postgresql.core.v3.ConnectionFactoryImpl log
 WARNING: SQLException occurred while connecting to ec2-52-44-166-58.compute-1.amazonaws.com:5432
-org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "197.156.190.136", user "stztbzqpnagyxc", database "d7bdtl932rqs4j", SSL off
+org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "197.156.190.133", user "stztbzqpnagyxc", database "d7bdtl932rqs4j", SSL off
 	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:473)
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:205)
 	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
@@ -104,9 +104,9 @@ org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "197.156
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:242)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:121)
 
-May 15, 2020 4:52:55 PM org.postgresql.Driver connect
+May 15, 2020 5:23:32 PM org.postgresql.Driver connect
 SEVERE: Connection error: 
-org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "197.156.190.136", user "stztbzqpnagyxc", database "d7bdtl932rqs4j", SSL off
+org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "197.156.190.133", user "stztbzqpnagyxc", database "d7bdtl932rqs4j", SSL off
 	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:473)
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:205)
 	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
@@ -140,7 +140,7 @@ org.postgresql.util.PSQLException: FATAL: no pg_hba.conf entry for host "197.156
 
 ]]></system-err>
   </testcase>
-  <testcase name="dao.Sql2oSquadDaoTest" classname="dao.Sql2oSquadDaoTest" time="1.05">
+  <testcase name="dao.Sql2oSquadDaoTest" classname="dao.Sql2oSquadDaoTest" time="0.942">
     <error type="java.lang.NullPointerException">java.lang.NullPointerException
 	at dao.Sql2oSquadDaoTest.shutDown(Sql2oSquadDaoTest.java:39)
 </error>
